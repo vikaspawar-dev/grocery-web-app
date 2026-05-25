@@ -35,7 +35,7 @@ npm run dev
 
 ## Screenshots
 
-(screenshot.png)
+![Screenshot](screenshot.png)
 
 ## Author
 
