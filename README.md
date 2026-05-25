@@ -2,6 +2,10 @@
 
 A modern and responsive grocery shopping website built using React and Tailwind CSS.
 
+## Live Demo
+
+https://vikaspawar-dev.github.io/grocery-web-app/
+
 ## Features
 
 * Responsive Design
