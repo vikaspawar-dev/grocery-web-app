@@ -1,0 +1,70 @@
+import React from 'react'
+import Heading from '../Heading/Heading'
+import FruitsCat from '../../assets/fruits-and-veggies.png'
+import DairyCat from '../../assets/dairy-and-eggs.png'
+import SeaFoodCat from '../../assets/meat-and-seafood.png'
+import { Link } from 'react-router-dom'
+
+const Category = () => {
+
+    const renderCard = category.map(card => {
+        return (
+            // Card 
+            <div className='flex-1 basis-[300px] ' key={card.id}>
+                {/* Card Image  */}
+                <div className=' w-full min-h-[30vh] relative -mb-10'>
+                    <img src={card.Image} className='absolute bottom-0' />
+                </div>
+
+                {/* Card Content  */}
+                <div className='bg-zinc-100 pt-17 p-8 rounded-xl'>
+                    <h3 className='text-zinc-800 text-3xl font-bold'>{card.title}</h3>
+                    <p className='text-zinc-600 mt-3 mb-9 min-h-[80px]'>{card.description}</p>
+                    <Link to={card.path} className='bg-orange-500 text-white px-8 py-3 rounded-lg md:text-lg text-md hover:scale-105 hover:bg-orange-600 transition-all duration-300 cursor-pointer'>See All</Link>
+                </div>
+            </div>
+
+       )
+    })
+    return (
+        <section>
+        <div className='max-w-[1400px] mx-auto px-10 py-20'>
+                    <Heading highlight="Shop" heading="by Category" />
+
+                    {/* Category Card  */}
+                    <div className='flex gap-10 flex-wrap md:mt-15 '>
+                        {renderCard}
+                    </div>
+
+
+                </div>
+            </section>
+        )
+    }
+
+export default Category
+
+    const category = [
+        {
+            id: 1,
+            title: 'Fruits & Veggies',
+            description: "Fresh organic fruits and farm-picked vegetables full of natural nutrition and flavor.",
+            Image: FruitsCat,
+            path:'/fruits'
+        },
+        {
+            id: 2,
+            title: 'Dairy & Eggs',
+            description: "Pure dairy products and fresh eggs delivered daily for a healthy lifestyle.",
+            Image: DairyCat,
+            path:'/dairy'
+        },
+        {
+            id: 3,
+            title: 'Meat & SeaFood',
+            description: "Premium quality meat and fresh seafood packed with rich taste and freshness.",
+            Image: SeaFoodCat,
+            path:'/seafood'
+        },
+
+    ]
